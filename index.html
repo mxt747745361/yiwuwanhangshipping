@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>义乌市万航国际货运代理有限公司 - 沙特专线</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -13,259 +14,180 @@
     max-width: 100%;
     overflow-x: hidden;
   }
-  .container {
-    max-width: 750px;
-    margin: 0 auto;
-    background: #fff;
-  }
+  .container { max-width: 750px; margin: 0 auto; background: #fff; }
 
-  /* ===== 顶部名片区域（替换原 banner）===== */
-  .header-card {
-    width: 100%;
-    background: linear-gradient(135deg, #0a2a4e 0%, #0d3b6e 50%, #1a5276 100%);
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .header-card img {
-    width: 100%;
-    display: block;
-  }
-  .header-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(255,107,0,0.95);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    backdrop-filter: blur(4px);
-  }
+  /* 顶部名片 */
+  .header-card { width: 100%; }
+  .header-card img { width: 100%; display: block; }
 
-  /* ===== 视频区域 ===== */
-  .video-section {
-    width: 100%;
-    background: #000;
-  }
-  .video-section video {
-    width: 100%;
-    display: block;
-  }
+  /* 视频 */
+  .video-section { width: 100%; background: #000; }
+  .video-section video { width: 100%; display: block; }
 
-  /* ===== 图片区域 ===== */
-  .image-section {
-    width: 100%;
-  }
-  .image-section img {
-    width: 100%;
-    display: block;
-  }
+  /* 单图 */
+  .image-section { width: 100%; }
+  .image-section img { width: 100%; display: block; }
 
-  /* ===== 文字内容区域 ===== */
-  .text-section {
-    padding: 24px 20px;
-    text-align: center;
-  }
+  /* Swiper 轮播 */
+  .swiper-section { width: 100%; }
+  .swiper-section .swiper { width: 100%; }
+  .swiper-section .swiper-slide { text-align: center; }
+  .swiper-section .swiper-slide img { width: 100%; display: block; }
+  .swiper-section .swiper-pagination-bullet { background: #003a8c; opacity: 0.4; }
+  .swiper-section .swiper-pagination-bullet-active { opacity: 1; background: #ff6b00; }
+
+  /* 文字 */
+  .text-section { padding: 24px 20px; text-align: center; }
   .section-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 16px;
-    position: relative;
-    display: inline-block;
+    font-size: 22px; font-weight: 700; color: #000; margin-bottom: 16px;
+    position: relative; display: inline-block;
   }
   .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: #ff6b00;
-    border-radius: 2px;
+    content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+    width: 40px; height: 3px; background: #ff6b00; border-radius: 2px;
   }
-  .section-subtitle {
-    font-size: 15px;
-    color: #003a8c;
-    margin-bottom: 8px;
-  }
-  .section-body {
-    font-size: 15px;
-    color: #333;
-    line-height: 1.8;
-    text-align: center;
-  }
-  .highlight-text {
-    color: #003a8c;
-    font-weight: 700;
-    font-size: 19px;
-  }
-  .contact-info {
-    text-align: center;
-    font-size: 15px;
-    line-height: 2.2;
-    color: #333;
-  }
-  .contact-info .label {
-    color: #003a8c;
-    font-weight: 600;
-  }
+  .section-subtitle { font-size: 15px; color: #003a8c; margin-bottom: 8px; }
+  .highlight-text { color: #003a8c; font-weight: 700; font-size: 19px; }
+  .contact-info { text-align: center; font-size: 15px; line-height: 2.2; color: #333; }
 
-  /* ===== 底部名片区域 ===== */
-  .footer-card {
-    width: 100%;
-    background: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #003a8c;
-  }
-  .footer-card img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  }
-  .footer-thanks {
-    padding: 30px 20px;
-    text-align: center;
-    background: #003a8c;
-    color: #fff;
-  }
-  .footer-thanks .cn {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .footer-thanks .en {
-    font-size: 13px;
-    opacity: 0.8;
-  }
+  /* 分隔线 */
+  .divider { height: 8px; background: linear-gradient(90deg, #003a8c, #ff6b00); }
 
-  /* ===== 分隔线 ===== */
-  .divider {
-    height: 8px;
-    background: linear-gradient(90deg, #003a8c, #ff6b00);
-  }
+  /* 底部名片 */
+  .footer-card { width: 100%; background: #f8f9fa; padding: 20px; text-align: center; border-top: 2px solid #003a8c; }
+  .footer-card img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
 
-  /* ===== 微信二维码区域 ===== */
-  .qr-section {
-    padding: 20px;
-    text-align: center;
-  }
-  .qr-section img {
-    width: 160px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  .qr-label {
-    font-size: 12px;
-    color: #666;
-    margin-top: 8px;
-  }
+  /* 感谢语 */
+  .footer-thanks { padding: 30px 20px; text-align: center; background: #003a8c; color: #fff; }
+  .footer-thanks .cn { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .footer-thanks .en { font-size: 13px; opacity: 0.8; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- ===== 1. 顶部名片（替换原 banner）===== -->
+  <!-- 1. 顶部名片 -->
   <div class="header-card">
     <img src="header_card.jpg" alt="万航国际货运 - 沙特专线名片">
   </div>
 
-  <!-- ===== 2. 视频 ===== -->
+  <!-- 2. 视频1 -->
   <div class="video-section">
-    <video controls preload="metadata" poster="https://img.ma3you.com/media/uploads/img_files/6b85bea12748406c79a67a168ea83978/cd66984382c44a258a109052f4bcc66c.JPG?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_900/quality,Q_95/format,jpg">
-      <source src="https://vod.ma3you.com/00f4d710b60371ef91756733a78e0102/d607f5ac7afa417d95603f05dc69d83f-b89dacfdf520294f864b0419ecc92764-hd.mp4?auth_key=1782460959-aa60b5b2d3a84047a214db8b89dabe00-0-15984dead97916b74330ebdc32e543c5" type="video/mp4">
+    <video controls preload="metadata">
+      <source src="assets/video/promo1.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- ===== 3. 大图 ===== -->
+  <!-- 3. 沙特双清大图 -->
   <div class="image-section">
-    <img src="assets/saudi_main.jpg" alt="沙特双清">
+    <img src="assets/single/saudi_main.jpg" alt="沙特双清">
   </div>
 
-  <!-- ===== 4. 沙特双清 标题 ===== -->
+  <!-- 4. 沙特双清标题 -->
   <div class="text-section">
     <div class="section-title">沙特双清</div>
   </div>
 
-  <!-- ===== 5. 沙特双清 描述 ===== -->
+  <!-- 5. 沙特双清描述 -->
   <div class="text-section" style="padding-top: 0;">
     <div class="section-subtitle">Saudi Arabia Door To Door</div>
-    <div class="section-body">
+    <div style="font-size: 15px; color: #333; line-height: 1.8; text-align: center;">
       专注沙特双清门到门，15年专线经验，专业团队为您打造最具性价比的货运方案，24小时在线对接，最好的价格，最好的服务。
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ===== 6. 图片 ===== -->
-  <div class="image-section">
-    <img src="assets/warehouse.jpg" alt="服务介绍">
+  <!-- 6. 轮播图组1（10张 - 服务介绍）-->
+  <div class="swiper-section">
+    <div class="swiper swiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/swiper1/01.jpg" alt="服务介绍1"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/02.jpg" alt="服务介绍2"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/03.jpg" alt="服务介绍3"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/04.jpg" alt="服务介绍4"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/05.jpg" alt="服务介绍5"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/06.jpg" alt="服务介绍6"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/07.jpg" alt="服务介绍7"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/08.jpg" alt="服务介绍8"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/09.jpg" alt="服务介绍9"></div>
+        <div class="swiper-slide"><img src="assets/swiper1/10.jpg" alt="服务介绍10"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 
-  <!-- ===== 7. 关于我们 标题 ===== -->
+  <!-- 7. 关于我们标题 -->
   <div class="text-section">
     <div class="section-title">关于我们</div>
   </div>
 
-  <!-- ===== 8. 关于我们 描述 ===== -->
+  <!-- 8. 关于我们描述 -->
   <div class="text-section" style="padding-top: 0;">
     <div class="highlight-text">服务宗旨：</div>
     <div class="highlight-text">诚信合作 &nbsp; 严谨做事 &nbsp; 高效服务</div>
   </div>
 
-  <!-- ===== 9. 图片 ===== -->
-  <div class="image-section">
-    <img src="assets/customs.png" alt="仓储运输">
+  <!-- 9. 轮播图组2（8张 - 仓储运输）-->
+  <div class="swiper-section">
+    <div class="swiper swiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/swiper2/01.jpg" alt="仓储运输1"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/02.jpg" alt="仓储运输2"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/03.jpg" alt="仓储运输3"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/04.jpg" alt="仓储运输4"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/05.jpg" alt="仓储运输5"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/06.jpg" alt="仓储运输6"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/07.jpg" alt="仓储运输7"></div>
+        <div class="swiper-slide"><img src="assets/swiper2/08.jpg" alt="仓储运输8"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 
-  <!-- ===== 10. 仓储运输描述 ===== -->
+  <!-- 10. 仓储运输描述 -->
   <div class="text-section">
     <div class="highlight-text">成熟的仓储运输服务</div>
     <div class="highlight-text">安全高效，无后顾之忧</div>
   </div>
 
-  <!-- ===== 11. 图片 ===== -->
+  <!-- 11. 海关法规图 -->
   <div class="image-section">
-    <img src="assets/service_large.jpg" alt="海关法规">
+    <img src="assets/single/customs.png" alt="海关法规">
   </div>
 
-  <!-- ===== 12. 海关法规描述 ===== -->
+  <!-- 12. 海关法规描述 -->
   <div class="text-section">
     <div class="highlight-text">深入了解中国-沙特海关法规</div>
     <div class="highlight-text">专业数据处理分析</div>
   </div>
 
-  <!-- ===== 13. 大图 ===== -->
+  <!-- 13. 沙特双清服务大图 -->
   <div class="image-section">
-    <img src="assets/saudi_main.jpg" alt="沙特双清服务">
+    <img src="assets/single/service_large.jpg" alt="沙特双清服务">
   </div>
 
   <div class="divider"></div>
 
-  <!-- ===== 14. 联系我们 标题 ===== -->
+  <!-- 14. 联系我们标题 -->
   <div class="text-section">
     <div class="section-title">联系我们</div>
   </div>
 
-  <!-- ===== 15. 联系我们 描述 ===== -->
+  <!-- 15. 联系我们描述 -->
   <div class="text-section" style="padding-top: 0;">
     <div class="highlight-text">欢迎咨询，获取一手价格和最新海关政策</div>
     <div class="section-subtitle" style="font-size: 13px;">welcome to contact us for the best prices and latest news</div>
   </div>
 
-  <!-- ===== 16. 视频 ===== -->
+  <!-- 16. 视频2 -->
   <div class="video-section">
     <video controls preload="metadata">
-      <source src="https://vod.ma3you.com/c0b1693cb37571efbe3f4531948c0102/f54501f5c8fa48c8ae519f32be9e0d2a-hd.mp4?auth_key=1782460959-aa60b5b2d3a84047a214db8b89dabe00-0-15984dead97916b74330ebdc32e543c5" type="video/mp4">
+      <source src="assets/video/promo2.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- ===== 17. 联系信息（万航名片版）===== -->
+  <!-- 17. 联系信息（王文清 jabir）-->
   <div class="text-section" style="padding: 40px 20px; background: #fff;">
     <div style="font-size: 28px; font-weight: 800; color: #003a8c; margin-bottom: 6px; letter-spacing: 4px;">最好的价格&nbsp;&nbsp;最好的服务</div>
     <div style="font-size: 15px; color: #003a8c; margin-bottom: 32px;">Best price &amp; Best service</div>
@@ -277,17 +199,35 @@
     </div>
   </div>
 
-  <!-- ===== 19. 感谢语 ===== -->
+  <!-- 18. 感谢语 -->
   <div class="footer-thanks">
     <div class="cn">感谢查询，祝您生活愉快，工作顺利</div>
     <div class="en">Thanks for inquiring and have a great life and a great job.</div>
   </div>
 
-  <!-- ===== 20. 底部名片 ===== -->
+  <!-- 19. 底部名片 -->
   <div class="footer-card">
-    <img src="assets/footer_card.jpg" alt="万航国际货运名片">
+    <img src="assets/single/footer_card.jpg" alt="万航国际货运名片">
   </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // 轮播图组1
+  new Swiper('.swiper1', {
+    loop: true,
+    autoplay: { delay: 2000, disableOnInteraction: false },
+    pagination: { el: '.swiper1 .swiper-pagination', clickable: true },
+    speed: 600,
+  });
+  // 轮播图组2
+  new Swiper('.swiper2', {
+    loop: true,
+    autoplay: { delay: 2000, disableOnInteraction: false },
+    pagination: { el: '.swiper2 .swiper-pagination', clickable: true },
+    speed: 600,
+  });
+</script>
 </body>
 </html>
